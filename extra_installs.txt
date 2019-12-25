@@ -5,4 +5,4 @@ Space Gray Oceanic Theme for Sublime
 
 Modify settings file for sublime for 12 font
 
-
+Manually install MacTeX
