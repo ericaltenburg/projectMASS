@@ -11,7 +11,8 @@ brew cask install google-chrome
 brew cask install sublime-text
 brew cask install spotify
 brew cask install skype
-brew cask install caskroom/cask/mactex
+brew cask instal mactex
+
 
 # Install Fira Code Font
 brew tap homebrew/cask-fonts
