@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+echo "Testing to see if Homebrew is installed: "
+if test ! $(which brew); then
+	echo "Installing Homebrew"
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
 # Install Brew Packages
 brew install python
 brew install tree
