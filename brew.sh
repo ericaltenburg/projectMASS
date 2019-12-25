@@ -6,7 +6,7 @@ brew install tree
 brew install zsh
 
 # Install MacOS applications
-brew cask insatll iterm2
+brew cask install iterm2
 brew cask install google-chrome
 brew cask install sublime-text
 brew cask install spotify
@@ -15,4 +15,4 @@ brew cask install caskroom/cask/mactex
 
 # Install Fira Code Font
 brew tap homebrew/cask-fonts
-brew cask insatll font-fira-code
+brew cask install font-fira-code
