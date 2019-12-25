@@ -1,6 +1,0 @@
-Todo: 
-- Install xcode
-- Install homebrew
-- Install git
-- Install apps
-- Install custom settings for sublime/vscode(?)
