@@ -10,6 +10,7 @@ fi
 brew install python
 brew install tree
 brew install zsh
+brew install zsh-syntax-highlighting
 
 # Install MacOS applications
 brew cask install iterm2
