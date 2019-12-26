@@ -8,3 +8,5 @@ I think maybe I need to change the font and the syntax highlighting for this
 Modify settings file for sublime for 12 font
 
 Manually install MacTeX
+
+Look into copying over .zshrc file with all plugins and theme
