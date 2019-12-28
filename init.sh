@@ -7,6 +7,9 @@
 # Install the xcode command line tools
 xcode-select --install
 
+# Show hidden files in Finder, make sure to relaunch Finder
+defaults write com.apple.finder AppleShowAllFiles YES
+
 # Run the brew script
 ./brew.sh
 
