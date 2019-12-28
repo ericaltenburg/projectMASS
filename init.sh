@@ -9,6 +9,7 @@ xcode-select --install
 
 # Show hidden files in Finder, make sure to relaunch Finder
 defaults write com.apple.finder AppleShowAllFiles YES
+killall -KILL Finder
 
 # Run the brew script
 ./brew.sh
