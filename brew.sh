@@ -20,7 +20,8 @@ brew cask install spotify
 brew cask install skype
 brew cask install mactex
 brew cask install slack
-brew cask insatll alfred
+brew cask install elfred
+brew cask install macupdater
 
 # Install Fira Code Font
 brew tap homebrew/cask-fonts
