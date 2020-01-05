@@ -22,6 +22,8 @@ brew cask install mactex
 brew cask install slack
 brew cask install alfred
 brew cask install macupdater
+# Microsoft Office if you have a subscription
+brew cask install microsoft-office
 
 # Install Fira Code Font
 brew tap homebrew/cask-fonts
