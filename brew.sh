@@ -22,6 +22,9 @@ brew cask install mactex
 brew cask install slack
 brew cask install alfred
 brew cask install macupdater
+brew cask install virtualbox
+brew cask install gyazo
+brew cask install intellij-idea
 # Microsoft Office if you have a subscription
 brew cask install microsoft-office
 
