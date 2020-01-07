@@ -4,6 +4,8 @@ echo "Testing to see if Homebrew is installed: "
 if test ! $(which brew); then
 	echo "Installing Homebrew"
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	else
+	echo "Homebrew is installed."
 fi
 
 # Install Brew Packages
