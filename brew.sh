@@ -27,6 +27,7 @@ brew cask install macupdater
 brew cask install virtualbox
 brew cask install gyazo
 brew cask install intellij-idea
+brew cask install scroll-reverser
 # Microsoft Office if you have a subscription
 brew cask install microsoft-office
 
