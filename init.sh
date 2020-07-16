@@ -19,3 +19,6 @@ killall -KILL Finder
 
 # Run the Sublime script
 ./sublime.sh
+
+# Run the config script for dotfiles and fs.sh
+./config.sh
