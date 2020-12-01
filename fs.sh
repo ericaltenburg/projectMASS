@@ -17,7 +17,7 @@ function find_git {
 			git fetch -q > .to_be_removed.txt
 			rm .to_be_removed.txt
 			echo $(git status) > .temp.txt
-			if [ ! -z "$(grep "Untracked files" .temp.txt)" ] || [ ! -z "$(grep "Your branch is behind" .temp.txt)" ]
+			if [ ! -z "$(grep "Untracked files\|Your branch is behind\|modified:" .temp.txt)" ]
 			then 
 				CHANGED_DIRECTORIES+=( $directs )
 				WORK_DONE=true
@@ -32,8 +32,11 @@ function find_git {
 
 for i in */
 do
+	echo "Peeking into first-layer directory: $i"
 	find_git "$i"
 done
+
+echo $'\nDone searching directories for status\n'
 
 if [ "$WORK_DONE" == false ]
 then
