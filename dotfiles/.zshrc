@@ -107,3 +107,25 @@ test -r /Users/altenburg/.opam/opam-init/init.zsh && . /Users/altenburg/.opam/op
 alias cpwd="pwd|pbcopy"
 alias gfs="git fetch && git status"
 alias copy="pbcopy"
+alias btop="bashtop"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/altenburg/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/altenburg/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/altenburg/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/altenburg/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# TERMINUS FOR SUBLIME3
+if [ "$TERM_PROGRAM" = "Terminus-Sublime" ]; then
+    bindkey "\e[1;3C" forward-word
+    bindkey "\e[1;3D" backward-word
+fi

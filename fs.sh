@@ -16,7 +16,7 @@ function find_git {
 			git fetch -q > .to_be_removed.txt
 			rm .to_be_removed.txt
 			echo $(git status) > .git_status.txt
-			if [ ! -z "$(grep "Untracked files\|Your branch is behind\|deleted:\|new file:" .git_status.txt)" ]
+			if [ ! -z "$(grep "Untracked files\|Your branch is behind\|deleted:\|new file:\|modified:" .git_status.txt)" ]
 			then 
 				PARENT_AND_CURRENT_DIRECTORY+="$directs"
 				CHANGED_DIRECTORIES+=( $PARENT_AND_CURRENT_DIRECTORY )
