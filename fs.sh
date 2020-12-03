@@ -9,22 +9,23 @@ function find_git {
 	DIRECTORIES=$1
 	for directs in $DIRECTORIES
 	do
+		PARENT_AND_CURRENT_DIRECTORY=$2
 		cd $directs
-		if [ -d .git ]
+		if [ -d .git ] # if the directory contains the .git folder
 		then 
-			# echo Peeking into $directs
-			# echo Fetching Status...
 			git fetch -q > .to_be_removed.txt
 			rm .to_be_removed.txt
-			echo $(git status) > .temp.txt
-			if [ ! -z "$(grep "Untracked files\|Your branch is behind\|modified:" .temp.txt)" ]
+			echo $(git status) > .git_status.txt
+			if [ ! -z "$(grep "Untracked files\|Your branch is behind\|deleted:\|new file:" .git_status.txt)" ]
 			then 
-				CHANGED_DIRECTORIES+=( $directs )
+				PARENT_AND_CURRENT_DIRECTORY+="$directs"
+				CHANGED_DIRECTORIES+=( $PARENT_AND_CURRENT_DIRECTORY )
 				WORK_DONE=true
 			fi
-			rm .temp.txt
-		else 
-			find_git "*/"
+			rm .git_status.txt
+		elif [ "$(ls -A ".")" ] # Make sure the directory is not empty before calling into its children
+		then
+			find_git "*/" "$PARENT_AND_CURRENT_DIRECTORY"
 		fi
 		cd ..
 	done
@@ -32,11 +33,12 @@ function find_git {
 
 for i in */
 do
+	FIRST_LAYER_DIRECTORY="$i"
 	echo "Peeking into first-layer directory: $i"
-	find_git "$i"
+	find_git "$i" "$FIRST_LAYER_DIRECTORY"
 done
 
-echo $'\nDone searching directories for status\n'
+echo $'\nDone fetching statuses in repositories\n'
 
 if [ "$WORK_DONE" == false ]
 then
