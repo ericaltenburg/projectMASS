@@ -25,6 +25,7 @@ function find_git {
 			rm .git_status.txt
 		elif [ "$(ls -A ".")" ] # Make sure the directory is not empty before calling into its children
 		then
+			PARENT_AND_CURRENT_DIRECTORY+="$directs"
 			find_git "*/" "$PARENT_AND_CURRENT_DIRECTORY"
 		fi
 		cd ..
