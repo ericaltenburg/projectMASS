@@ -36,7 +36,7 @@ for i in */
 do
 	FIRST_LAYER_DIRECTORY="$i"
 	echo "Peeking into first-layer directory: $i"
-	find_git "$i" "$FIRST_LAYER_DIRECTORY"
+	find_git "$i"
 done
 
 echo $'\nDone fetching statuses in repositories\n'
